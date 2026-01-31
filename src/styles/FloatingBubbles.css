@@ -1,0 +1,75 @@
+.floating-bubbles-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-bubble {
+  position: absolute;
+  width: var(--bubble-size);
+  height: var(--bubble-size);
+  opacity: 0.15;
+}
+
+.floating-up {
+  animation: float-up var(--bubble-duration) ease-in-out var(--bubble-delay)
+    infinite;
+}
+
+.floating-down {
+  animation: float-down var(--bubble-duration) ease-in-out var(--bubble-delay)
+    infinite;
+}
+
+.bubble-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.1));
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.25;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0.05;
+  }
+}
+
+@keyframes float-down {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.25;
+  }
+  100% {
+    transform: translateY(100vh) rotate(-360deg);
+    opacity: 0.05;
+  }
+}
+
+/* Responsive untuk mobile */
+@media (max-width: 768px) {
+  .floating-bubble {
+    width: calc(var(--bubble-size) * 0.7);
+    height: calc(var(--bubble-size) * 0.7);
+    opacity: 0.1;
+  }
+
+  .floating-bubble:nth-child(3),
+  .floating-bubble:nth-child(4) {
+    display: none;
+  }
+}

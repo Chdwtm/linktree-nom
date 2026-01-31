@@ -1,0 +1,259 @@
+.linktree-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+  width: 100%;
+  gap: 30px;
+  animation: fadeIn 0.5s ease-in;
+  position: relative;
+  z-index: 10;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Profile Section */
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
+  padding: 30px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 600px;
+}
+
+.app.dark-mode .profile-section {
+  background: rgba(30, 30, 50, 0.9);
+  color: #ffffff;
+}
+
+.profile-image-wrapper {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 10px;
+  animation: scaleIn 0.6s ease-out;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #667eea;
+  box-shadow: 0 0 30px rgba(102, 126, 234, 0.4);
+  transition: all 0.3s ease;
+}
+
+.app.dark-mode .profile-image {
+  border-color: #764ba2;
+  box-shadow: 0 0 30px rgba(118, 75, 162, 0.4);
+}
+
+.profile-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(102, 126, 234, 0.6);
+}
+
+.profile-name {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 10px 0;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.app.dark-mode .profile-name {
+  color: #ffffff;
+}
+
+.profile-bio {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.app.dark-mode .profile-bio {
+  color: #b0b0b0;
+}
+
+/* Time Info Section */
+.time-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 2px solid #e0e0e0;
+  width: 100%;
+}
+
+.app.dark-mode .time-info {
+  border-top-color: #444;
+}
+
+.greeting {
+  font-size: 16px;
+  font-weight: 600;
+  color: #667eea;
+  transition: color 0.3s ease;
+}
+
+.app.dark-mode .greeting {
+  color: #a78bfa;
+}
+
+.current-time {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+  font-family: "Courier New", monospace;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.app.dark-mode .current-time {
+  color: #ffffff;
+}
+
+.theme-indicator {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  width: fit-content;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+.theme-indicator.day {
+  background: linear-gradient(135deg, #ffd89b 0%, #ffa751 100%);
+  color: #fff;
+}
+
+.theme-indicator.night {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+}
+
+/* Links Section */
+.links-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.links-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 12px;
+  margin-top: 20px;
+  transition: color 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .linktree-container {
+    max-width: 100%;
+    gap: 20px;
+  }
+
+  .profile-section {
+    padding: 20px;
+    gap: 12px;
+  }
+
+  .profile-image-wrapper {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profile-name {
+    font-size: 24px;
+  }
+
+  .profile-bio {
+    font-size: 13px;
+  }
+
+  .greeting {
+    font-size: 14px;
+  }
+
+  .current-time {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .linktree-container {
+    gap: 15px;
+  }
+
+  .profile-section {
+    padding: 15px;
+  }
+
+  .profile-image-wrapper {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-name {
+    font-size: 20px;
+  }
+
+  .profile-bio {
+    font-size: 12px;
+  }
+
+  .greeting {
+    font-size: 13px;
+  }
+
+  .current-time {
+    font-size: 14px;
+  }
+
+  .theme-indicator {
+    font-size: 11px;
+  }
+}
